@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,300;1,700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap"
         rel="stylesheet">
 </head>
 
@@ -40,40 +39,57 @@
             </a>
         </div>
     </nav>
+
+    <section class="konten">
+        <div class="tab-container">
+            <div class="tab">
+                <button class="tab-btn active" data-tab="history">Riwayat</button>
+                <button class="tab-btn" data-tab="favorites">Favorit</button>
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane active" id="history">
+                    <!-- Konten riwayat -->
+                    <div class="daftar-komik">
+                        <div class="comic-items">
+                            <a href="#">
+                                <div class="cover-container">
+                                    <img src="img/cover-martialpeak.jpg" alt="Martial Peak">
+                                    <span class="views">
+                                        <ion-icon name="eye"></ion-icon>
+                                        <p>1K</p>
+                                    </span>
+                                </div>
+                                <div class="tittle">
+                                    <p class="judul" target="text">Martial Peak</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="favorites">
+                        <!-- Konten favorit -->
+                        <div class="daftar-komik">
+                            <div class="comic-items">
+                                <a href="#">
+                                    <div class="cover-container">
+                                        <img src="img/cover-martialpeak.jpg" alt="Martial Peak">
+                                        <span class="views">
+                                            <ion-icon name="eye"></ion-icon>
+                                            <p>1K</p>
+                                        </span>
+                                    </div>
+                                    <div class="tittle">
+                                        <p class="judul" target="text">Martial Peak</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </section>
     <!-- icon -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
-
-<script>
-    // Dapatkan tombol navigasi
-    var navButtons = document.querySelectorAll('.nav button');
-
-    // Dapatkan konten
-    var contents = document.querySelectorAll('.content');
-
-    // Tambahkan event click pada setiap tombol navigasi
-    navButtons.forEach(function (button) {
-        button.addEventListener('click', function () {
-            // Hapus kelas active dari semua tombol navigasi
-            navButtons.forEach(function (button) {
-                button.classList.remove('active');
-            });
-
-            // Tambahkan kelas active pada tombol navigasi yang di klik
-            this.classList.add('active');
-
-            // Sembunyikan semua konten
-            contents.forEach(function (content) {
-                content.classList.remove('active');
-            });
-
-            // Tampilkan konten yang sesuai dengan tombol navigasi yang di klik
-            var target = this.getAttribute('data-target');
-            document.querySelector(target).classList.add('active');
-        });
-    });
-</script>
-
+<script src="js/script.js"></script>
 
 </html>

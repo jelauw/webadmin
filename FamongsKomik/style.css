@@ -32,6 +32,7 @@ body {
     right: 0;
     z-index: 999;
 }
+
 .logo a {
     display: flex;
     font-weight: 600;
@@ -39,13 +40,16 @@ body {
     font-size: large;
     color: blue;
 }
+
 .logo span {
     color: coral;
 }
+
 .logo img {
     height: 30px;
     margin: 10px 0;
 }
+
 .navbar .search {
     display: flex;
     align-items: center;
@@ -53,23 +57,27 @@ body {
     border-radius: 50px;
     padding: 5px 10px;
 }
+
 .search input[type="text"] {
     border: none;
     outline: none;
     width: 400px;
     padding: 5px;
 }
+
 .search button {
     border: none;
     background-color: transparent;
     outline: none;
     cursor: pointer;
 }
+
 .navbar .navbar-nav {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .navbar .navbar-nav a {
     display: flex;
     align-items: center;
@@ -85,6 +93,7 @@ h2 {
     font-size: medium;
     padding: 20px;
 }
+
 h2 span {
     background-color: blue;
     padding: 5px 10px;
@@ -100,7 +109,6 @@ h2 span {
     background-color: #fff;
     border-radius: 10px;
     margin: 60px auto;
-    padding: 10px;
     max-width: 900px;
 }
 
@@ -108,66 +116,82 @@ h2 span {
 .konten-update {
     width: 100%;
 }
+
 .list-update {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin: 0 20px;
 }
+
 .comic-items {
     position: relative;
 }
+
 .comic-items .cover-container img {
     width: 100%;
 }
-.comic-items .tittle {
+
+.konten-update .comic-items .tittle {
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.comic-items .tittle a {
+
+.konten-update .judul {
     font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-size: medium;
     color: #000;
+    width: 60%;
     text-decoration: none;
 }
+
 .comic-items .tag {
-    position: absolute;
-    bottom: 10px;
-    right: 0;
+    margin-top: -20px;
+    float: right;
+    font-size: small;
     background-color: coral;
     color: #fff;
     padding: 3px 6px;
 }
+
 .tittle .update {
-    font-size: 12px;
+    font-size: small;
     font-style: italic;
     color: #a1a1a1;
 }
 
 /* Views */
 .top-views {
-    margin-top: 40px;
+    margin: 20px 0;
 }
+
 .top-views .list-views {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin: 0 20px;
 }
-.list-views .comic-views {
+
+.list-views .comic-views a {
     display: flex;
-    flex-direction: row;
 }
+
 .comic-views .gambar {
     position: relative;
-    width: 35%;
+    width: 80%;
 }
+
 .comic-views .gambar img {
     width: 100%;
 }
-.gambar .views {
+
+.gambar .views,
+.daftar-komik .views {
     display: flex;
     position: absolute;
     top: 10px;
@@ -179,11 +203,93 @@ h2 span {
     font-size: small;
     border-radius: 5px;
 }
+
+.views ion-icon {
+    font-size: medium;
+    margin-right: 5px;
+}
+
 .comic-views .informasi {
     display: flex;
     flex-direction: column;
     margin-left: 10px;
     width: 200px;
+}
+
+.informasi p {
+    font-size: small;
+    text-decoration: none;
+}
+
+.informasi .judul {
+    font-weight: 500;
+    font-size: medium;
+    color: #000;
+    margin-top: 10px;
+}
+
+.informasi .genre,
+.informasi .update {
+    color: #999;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* DAFTAR KOMIK */
+.list-judul {
+    padding: 20px;
+}
+
+.daftar-komik {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.daftar-komik .tittle {
+    font-weight: 500;
+    line-height: 1;
+    white-space: normal;
+    text-align: center;
+    overflow: hidden;
+    color: #000;
+    overflow-wrap: break-word;
+}
+
+/* PAGE FAVORIT */
+.tab-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.tab {
+    display: flex;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.tab-btn.active {
+    background-color: #ddd;
+}
+
+.tab-content {
+    width: 100%;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
 }
 
 
@@ -194,9 +300,7 @@ h2 span {
 
     .navbar-nav .active {
         font-weight: bold;
-        /* memberikan tebal pada teks */
         color: coral;
-        /* mengubah warna teks menjadi merah */
         border-bottom: 2px solid coral;
         height: 30px;
         padding-bottom: 10px;
@@ -264,14 +368,48 @@ h2 span {
         width: 300px;
     }
 }
-@media only screen and (max-width: 560px) {
 
-    /* Navbar */
+@media only screen and (max-width: 600px) {
+
+    /* NAVBAR */
     .navbar .logo p {
         display: none;
     }
 
     .navbar .search input[type="text"] {
         width: 200px;
+    }
+
+    h2 {
+        padding: 20px 10px;
+    }
+
+    /* UPDATE */
+    .konten-update .list-update {
+        grid-template-columns: repeat(1, 1fr);
+        margin: 20px 10px;
+    }
+
+    .comic-items .tag {
+        position: relative;
+    }
+
+    /* TOP-VIEWS */
+    .top-views .list-views {
+        grid-template-columns: repeat(1, 1fr);
+        margin: 20px 10px;
+    }
+
+    .comic-views .gambar {
+        width: 35%;
+    }
+
+    /* DAFTAR KOMIK */
+    .list-judul {
+        padding: 10px;
+    }
+
+    .daftar-komik {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
