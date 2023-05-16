@@ -259,38 +259,76 @@ h2 span {
 
 /* PAGE FAVORIT */
 .tab-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    position: relative;
+    overflow-x: hidden;
+    white-space: nowrap;
 }
 
 .tab {
     display: flex;
+    padding: 20px;
 }
 
 .tab-btn {
     padding: 10px 20px;
-    background-color: #f2f2f2;
+    background-color: #fff;
+    color: coral;
+    font-size: medium;
+    font-weight: 600;
     border: none;
     cursor: pointer;
     outline: none;
 }
 
 .tab-btn.active {
-    background-color: #ddd;
+    background-color: blue;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: medium;
 }
 
 .tab-content {
-    width: 100%;
+    display: flex;
+    transition: transform 0.3s ease-in-out;
 }
 
 .tab-pane {
-    display: none;
+    flex-shrink: 0;
+    width: 100%;
 }
 
 .tab-pane.active {
     display: block;
 }
+
+/* PAGE FAVORIT KONTEN RIWAYAT */
+.list-riwayat {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 0 20px;
+}
+
+.list-riwayat .informasi {
+    text-decoration: none;
+    color: #ccc;
+}
+
+.list-riwayat .comic-views a {
+    display: flex;
+}
+
+.comic-views .gambar {
+    position: relative;
+    width: 40%;
+}
+
+.comic-views .gambar img {
+    width: 100%;
+}
+
+
 
 
 @media screen and (min-width: 1025px) {
@@ -367,6 +405,12 @@ h2 span {
     .navbar .search input[type="text"] {
         width: 300px;
     }
+
+    /* FITUR SLIDE */
+    .tab-pane {
+        flex-shrink: 0;
+        width: 100vw;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -411,5 +455,10 @@ h2 span {
 
     .daftar-komik {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* PAGE FAVORIT KONTEN RIWAYAT */
+    .list-riwayat {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
