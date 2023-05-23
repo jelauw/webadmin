@@ -1,0 +1,74 @@
+body {
+    font-family: 'Poppins';
+    background-color: #fff;
+    color: #000;
+}
+
+.container {
+    display: block;
+    max-width: 300px;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.logo {
+    display: flex;
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+    color: blue;
+}
+.logo p {
+    font-size: 24px;
+}
+.logo span {
+    color: coral;
+}
+.logo img {
+    height: 50px;
+    margin: 10px 0;
+}
+
+h2 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    display: block;
+    width: calc(100% - 22px);
+    margin: 0 auto;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: coral;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: blue;
+}
